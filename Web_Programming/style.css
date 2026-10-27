@@ -1,0 +1,70 @@
+:root {
+  --ink: #1f2933;
+  --muted: #6b7785;
+  --bg: #f1f5f4;
+  --brand: #0f766e;
+  --brand-dark: #0b4f4a;
+  --income: #15803d;
+  --expense: #c2410c;
+}
+
+html { font-size: 18px; }
+
+body {
+  font-family: "DM Sans", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.app-container { max-width: 1100px; padding-bottom: 3rem; }
+
+/* Navbar */
+.top-nav { background: #fff; border-bottom: 1px solid #dde5e3; margin-bottom: 2rem; }
+.top-nav-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; padding-top: 0.8rem; padding-bottom: 0.8rem; }
+.brand { display: flex; align-items: center; gap: 0.6rem; font-weight: 700; font-size: 1.2rem; color: var(--brand-dark); }
+.brand-mark { display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 8px; background: var(--brand); color: #fff; font-size: 1rem; }
+.nav-tabs-lite { display: flex; gap: 0.25rem; flex-wrap: wrap; }
+.nav-tabs-lite a { color: var(--muted); font-weight: 500; text-decoration: none; padding: 0.45rem 0.9rem; border-radius: 8px; }
+.nav-tabs-lite a:hover { background: #eef4f3; color: var(--ink); }
+.nav-tabs-lite a.active { background: #e3efed; color: var(--brand-dark); font-weight: 700; }
+
+/* Page headings */
+.page-title { font-weight: 700; font-size: 1.9rem; margin-bottom: 0.25rem; }
+.page-sub { color: var(--muted); margin-bottom: 1.5rem; }
+
+/* Summary cards */
+.summary-card { border: 0; border-radius: 16px; padding: 0.4rem; box-shadow: 0 2px 10px rgba(15, 50, 48, 0.08); }
+.summary-card .label { color: var(--muted); font-weight: 500; margin-bottom: 0.3rem; }
+.summary-card .value { font-size: 2.2rem; font-weight: 700; margin: 0; }
+.summary-card.income .value { color: var(--income); }
+.summary-card.expense .value { color: var(--expense); }
+.summary-card.balance { background: var(--brand); }
+.summary-card.balance .label, .summary-card.balance .value { color: #fff; }
+
+/* Panels (table and form wrapper) */
+.panel { background: #fff; border-radius: 16px; padding: 1.5rem; box-shadow: 0 2px 10px rgba(15, 50, 48, 0.08); }
+.panel h5 { font-weight: 700; margin-bottom: 1rem; }
+
+/* Table */
+.table > :not(caption) > * > * { padding: 0.9rem 0.75rem; vertical-align: middle; }
+.table thead th { color: var(--muted); font-weight: 600; border-bottom-width: 2px; }
+.amount-income { color: var(--income); font-weight: 700; }
+.amount-expense { color: var(--expense); font-weight: 700; }
+.cat-badge { background: #e3efed; color: var(--brand-dark); font-weight: 500; padding: 0.35rem 0.7rem; border-radius: 999px; font-size: 0.85rem; }
+
+/* Forms and buttons */
+.form-control, .form-select { padding: 0.65rem 0.9rem; border-radius: 10px; }
+.form-label { font-weight: 600; }
+.btn { border-radius: 10px; font-weight: 600; }
+.btn-brand { background: var(--brand); color: #fff; padding: 0.7rem 1.6rem; }
+.btn-brand:hover { background: var(--brand-dark); color: #fff; }
+.empty-state { text-align: center; color: var(--muted); padding: 2.5rem 0; }
+
+@media (max-width: 576px) {
+  html { font-size: 16px; }
+  .top-nav .container { flex-direction: column; gap: 0.5rem; }
+}
+
+.chart-box { position: relative; height: 280px; }
+
+.month-select { width: auto; min-width: 190px; font-weight: 600; }
